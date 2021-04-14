@@ -1,0 +1,13 @@
+.AllI{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+.I_first{
+  position: relative;
+  max-width: 50vw;
+}
+.I_first_cont{
+  width: 50vw;
+  word-wrap: break-word
+}

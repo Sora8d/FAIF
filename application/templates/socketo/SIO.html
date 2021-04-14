@@ -1,0 +1,80 @@
+{% extends 'T1.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='SIO.css') }}">
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script type="text/javascript" charset="utf-8">
+  var ThaRoom;
+  $(document).ready(() => {
+    var socket = io('{{ namesp }}');
+// This one checks everytime the input value changes, and sends it, later update_value changes the value to what it should be
+    $('input.sync').on('input', function(event) {
+     socket.emit('s_v_c', {
+        who: $(this).attr('id'),
+        data: $(this).val(),
+        room: ThaRoom
+      });
+      return false
+    });
+    socket.on('connect', function() {
+      console.log('After connect');
+    });
+    socket.on('after_connect', function(msg) {
+      console.log('After connect ' + msg['msg']);
+      socket.emit('c_room', '{{ current_user.username }}')
+    });
+    socket.on('update_value', function(msg) {
+      console.log('Slider value updated');
+      $('#'+msg.who).val(msg.data);
+    });
+    socket.on('room_entry', (data) => {
+      console.log(data.room);
+      window.ThaRoom = data.room;
+      $('#RI').text(data.msg);
+    });
+    // This ones are about sending messages
+    send_msg = (msg) => socket.emit('m_t_n', msg);
+    socket.on('receive_msg', (msg) => {
+      rec_msg(msg);
+    });
+  });
+</script>
+<script type="text/javascript">
+  rec_msg = (msg) => {
+    var P = document.createElement('P');
+    P.innerHTML= msg['msg'];
+    P.class= 'msg_received';
+    $('.Messages').append(P);
+  };
+</script>
+{% endblock %}
+{% block content %}
+<h1>HERE I AM</h1>
+<div class="container text-center">
+  <h2>Slider Demo</h2>
+  <h2 id='RI'>Room</h2>
+  <form class="mt-5">
+    <div class="form-group">
+      <label for="formControlRange">Demo Slider 1</label>
+      <input type="range" class='sync' id='slider1' min='0' max='50' value="{{ slider1 }}">
+      <label for="formControlRange">Demo Slider 2</label>
+      <input type="range" class='sync' id='slider2' min='0' max='50' value="{{ slider2 }}">
+    </div>
+  </form>
+  <div class="C_container">
+    <div class="Messages">
+
+    </div>
+    <div class="Send">
+      <input type="text" id='cont_message' value="Type something u cumdump">
+      <button type="button" id='send_msg' name="button" onclick="send_msg({autor: '{{ current_user.username }}', msg: $('#cont_message').val()})">Send</button>
+    </div>
+  </div>
+  <div class="pl">
+    <p><a href="{{ url_for('socketo.ttt') }}">Play Tic Tac Toe?</a></p>
+  </div>
+</div>
+{% endblock %}

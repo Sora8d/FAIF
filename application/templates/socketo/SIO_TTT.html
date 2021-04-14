@@ -1,0 +1,77 @@
+{% extends 'T1.html' %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='SIO.css') }}">
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(() => {
+    var socket = io('{{ namesp }}');
+    socket.on('connect', function() {
+      console.log('After connect');
+    });
+    socket.on('after_connect', function(msg) {
+      console.log(msg['msg']);
+      start_room();
+    });
+    start_room = () => socket.emit('c_room', '{{ current_user.username }}');
+    socket.on('start_game', (Game) =>{
+      Board= Game.Board;
+      X = Game.X == socket.id;
+      state = Game.state;
+      turn = 1;
+      if (X){
+        $('p:first').text('You are X')
+      }
+      else {
+        $('p:first').text('You are O')
+      }
+
+    });
+    movement = (move) => {
+      if (X && turn == 1 || !X && turn == 0){
+        socket.emit('move', move, X);
+      }
+    };
+    socket.on('state', (State) =>{
+      Board= State.Board;
+      turn= State.t_or_w;
+      t_board(Board)
+    });
+  });
+  t_board= (board) =>{
+    for (const element in board){
+      $('#'+element).text(board[element])
+    }
+  };
+  </script>
+{% endblock %}
+{% block content %}
+<div class="title_container">
+  <h3>Welcome to TaTeTi!</h3>
+  <p>Once your partner connects a game will begin!</p>
+</div>
+<div class="Game_container">
+  <div class="Players">
+    <p></p>
+  </div>
+  <table class="Board">
+    <tr class="top_row">
+      <td id='TopL' onclick="movement('TopL')"></td>
+      <td id='TopM' onclick="movement('TopM')"></td>
+      <td id='TopR' onclick="movement('TopR')"></td>
+    </tr>
+    <tr class="middle_row">
+      <td id='MidL' onclick="movement('MidL')"></td>
+      <td id='MidM' onclick="movement('MidM')"></td>
+      <td id='MidR' onclick="movement('MidR')"></td>
+    </tr>
+    <tr class="bottom_row">
+      <td id='LowL' onclick="movement('LowL')"></td>
+      <td id='LowM' onclick="movement('LowM')"></td>
+      <td id='LowR' onclick="movement('LowR')"></td>
+    </tr>
+  </table>
+</div>
+{% endblock %}

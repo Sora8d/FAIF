@@ -1,0 +1,32 @@
+.sync{
+  -webkit-appearance: none;
+  background: black;
+}
+.C_container{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.Send{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.Game_container{
+  height: 700px;
+  width: 700px;
+}
+.Board{
+  height: 500px;
+  width: 500px;
+}
+tr{
+  border: 9px solid blue;
+}
+td{
+  text-align: center;
+  font-size: 50px;
+  height: 45px;
+  width: 45px;
+  border: 9px solid blue;
+}

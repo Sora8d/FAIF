@@ -1,0 +1,56 @@
+{% extends "T1.html" %}
+
+{% block css %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
+{% block content %}
+<div class="AllI">
+<div class="I_first_cont">
+<div class="I_first">
+    <h1>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
+    <p><a href="{{ url_for('main.secret') }}">Wanna see a secret?</a></p>
+  {% if current_user.is_authenticated %}
+    <div class="">
+      <p>Hello {{ current_user.username }}</p>
+      {% if form %}
+      <p> Wanna write something?</p>
+      <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+          {{ form.post.label }}<br>
+          {{ form.post(cols=32, rows=4) }}<br>
+          {% for error in form.post.errors %}
+          <span style='color: red;'>[{{ error }}]</span>
+          {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+      </form>
+      {% endif %}
+      {% endif %}
+    </div>
+  </div>
+  </div>
+  <div class="Posts">
+    <div class="">
+      {% if posts %}
+      {% for post in posts %}
+      {% if post.author.avatar %}
+      {% include '_post.html' %}
+      {% else %}
+      <p>{{ post.author.username }} says {{ post.body }} </p>
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+    </div>
+    <div>
+      {% if prev_url %}
+      <a href="{{ prev_url }}">Newer posts</a>
+      {% endif %}
+      {% if next_url %}
+      <a href="{{ next_url }}">Older posts</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title>{{ title }} - The Dictionary</title>
+    {% else %}
+    <title>God Damn u Forgot Something</title>
+    {% endif %}
+    {% block scripts %}
+    <script
+		 src="https://code.jquery.com/jquery-3.6.0.js"
+		 integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+		 crossorigin="anonymous">
+    </script>
+    <script type="text/javascript">
+      console.log('yay')
+    </script>
+    {{ moment.include_moment() }}
+    {% endblock %}
+    {% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    {% endblock %}
+  </head>
+  <body>
+    <div class="Title">
+      {% if current_user.is_authenticated %}
+      <h1 id='Title'>Hello, {{ current_user.username }}!</h1>
+      {% else %}
+      <h1>Hello, unknown</h1>
+      {% endif %}
+      {% if not current_user.is_anonymous %}
+      <div class=P_top>
+        <h2>Oh so you're {{ current_user.username }}</h2>
+        <a href="{{ url_for('main.user', username=current_user.username) }}">Profile</a>
+        <a href="{{ url_for('auth.logout') }}">Sayonara</a>
+      </div>
+      {% endif %}
+    </div>
+    <div class="Topbar">
+      <div>Index: <a href="{{ url_for('main.index') }}">Click me or kill me</a></div>
+      <div>Explore: <a href="{{ url_for('main.explore') }}">Lets look around</a></div>
+      {% if current_user.is_anonymous %}
+      <div>Login: <a href="{{ url_for('auth.loginn') }}">Open the door!</a></div>
+      {% endif %}
+    </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% set liid= 0 %}
+    <div>
+      <ul class="F_M">
+        {% for mess in messages %}
+        {% set liid = liid + 1 %}
+        <li id='li{{ liid }}'>{{ mess }}</li>
+        <script type="text/javascript">
+          setTimeout(()=> {
+            var liC = document.getElementById('li{{ liid }}');
+            liC.style.display='none'
+            liC.style.border='0'
+          }, 4000);
+        </script>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
+    </div>
+    {% block content %}{% endblock %}
+
+  </body>
+</html>

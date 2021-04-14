@@ -1,0 +1,86 @@
+2021-04-11 10:26:20,228 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 10:27:30,227 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 10:27:41,865 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 10:29:14,722 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 10:31:34,854 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 10:33:30,604 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 10:33:58,540 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 10:34:40,815 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 10:38:02,604 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 10:38:15,533 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 10:42:18,828 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 10:47:40,780 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 11:06:47,571 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 11:07:20,965 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 11:22:13,720 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 21:42:59,567 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 22:26:53,866 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:19:50,563 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:20:17,865 ERROR: Exception on /socketo1/Tic-Tac-Toe [GET] [in /home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/sora8d/Documents/Code/FAIF/application/socketo/so.py", line 25, in ttt
+    return render_template('socketo/SIO_TTT.html', namesp='/play_cunt')
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/sora8d/Documents/Code/FAIF/application/templates/socketo/SIO_TTT.html", line 41, in template
+    {% block content %}
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2021-04-11 23:20:50,942 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:27:50,494 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:28:49,649 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:31:05,995 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:32:11,245 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:33:47,065 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:35:53,545 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:36:42,801 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:41:00,168 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:42:11,673 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:47:45,102 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:50:50,912 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:52:23,095 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:57:19,816 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-11 23:59:51,149 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 00:07:08,293 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 00:09:56,247 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 00:15:06,973 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 00:17:01,066 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 00:18:07,701 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 00:18:44,791 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 00:20:41,695 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 00:22:24,612 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 00:23:46,353 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 00:24:53,357 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 00:26:01,631 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 00:31:28,481 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 00:33:34,861 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 11:19:39,621 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 11:30:23,472 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 13:57:25,574 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-12 13:59:22,789 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:84]
+2021-04-13 21:44:45,311 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF_2/application/__init__.py:84]

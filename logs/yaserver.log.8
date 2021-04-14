@@ -1,0 +1,106 @@
+2021-03-30 23:17:00,520 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-30 23:18:04,478 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-30 23:19:07,903 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-30 23:19:56,784 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 19:06:57,378 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 19:07:13,714 ERROR: Exception on /explore [GET] [in /home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/sora8d/Documents/Code/FAIF/application/main/routes.py", line 52, in explore
+    posts, next_url, prev_url= page('main.explore', Post.query.order_by(Post.timestamp.desc()))
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask_sqlalchemy/__init__.py", line 512, in __get__
+    mapper = orm.class_mapper(type)
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/sqlalchemy/orm/base.py", line 451, in class_mapper
+    mapper = _inspect_mapped_class(class_, configure=configure)
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/sqlalchemy/orm/base.py", line 430, in _inspect_mapped_class
+    mapper._configure_all()
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1352, in _configure_all
+    configure_mappers()
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3299, in configure_mappers
+    mapper._post_configure_properties()
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1965, in _post_configure_properties
+    prop.init()
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 197, in init
+    self.do_init()
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2077, in do_init
+    self._process_dependent_arguments()
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2106, in _process_dependent_arguments
+    setattr(self, attr, attr_value())
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/sqlalchemy/ext/declarative/clsregistry.py", line 337, in __call__
+    x = eval(self.arg, globals(), self._dict)
+  File "<string>", line 1, in <module>
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/sqlalchemy/ext/declarative/clsregistry.py", line 220, in __getattr__
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Class <class 'application.models.Message'> does not have a mapped column named 'recipient_id'
+2021-03-31 19:07:16,809 ERROR: Exception on /explore [GET] [in /home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/sora8d/Documents/Code/FAIF/application/main/routes.py", line 52, in explore
+    posts, next_url, prev_url= page('main.explore', Post.query.order_by(Post.timestamp.desc()))
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/flask_sqlalchemy/__init__.py", line 512, in __get__
+    mapper = orm.class_mapper(type)
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/sqlalchemy/orm/base.py", line 451, in class_mapper
+    mapper = _inspect_mapped_class(class_, configure=configure)
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/sqlalchemy/orm/base.py", line 430, in _inspect_mapped_class
+    mapper._configure_all()
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1352, in _configure_all
+    configure_mappers()
+  File "/home/sora8d/Documents/AllVENV/FAIF/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3295, in configure_mappers
+    raise e
+sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'mapped class User->user'. Original exception was: Class <class 'application.models.Message'> does not have a mapped column named 'recipient_id'
+2021-03-31 19:09:42,316 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 19:09:56,957 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 19:13:44,963 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 19:13:49,690 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 19:13:53,262 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 19:17:02,804 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 19:18:08,271 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 19:18:17,816 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 19:18:28,821 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 20:13:47,022 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 20:22:59,666 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 20:23:06,898 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 20:23:23,855 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 20:24:48,413 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 20:51:10,117 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 21:23:13,209 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 21:23:13,217 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-03-31 21:23:13,217 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-01 16:53:10,250 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-01 16:53:47,752 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-01 16:53:47,752 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-01 16:54:20,374 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-01 16:57:44,419 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-01 17:02:10,224 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-01 17:02:10,224 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-01 22:45:06,242 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-02 03:06:40,693 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-02 03:06:58,642 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-02 18:19:59,461 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-02 18:20:24,835 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-02 18:20:52,067 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-02 18:21:03,786 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-02 18:21:13,851 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]
+2021-04-02 18:21:29,500 INFO: Ya Server startup [in /home/sora8d/Documents/Code/FAIF/application/__init__.py:74]

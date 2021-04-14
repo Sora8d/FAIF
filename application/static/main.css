@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+body{
+  height: 100vw
+}
+.Title {
+}
+.Topbar{
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid gray;
+}
+.Topbar > div{
+  margin-left: 5vw;
+}
+.P_top{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.F_M{
+  text-align: left;
+  max-width: 1000px;
+  position: fixed;
+  top: 30px;
+  margin: 10px;
+  left: 40%;
+  background-color: #b7f4f7;
+}
+.F_M > li{
+  list-style: none;
+  border: 2px solid black;
+}

@@ -1,0 +1,15 @@
+{% extends 'T1.html' %}
+{% block content %}
+<div class=''>
+  <table>
+  {% numbah= 0 %}
+  {% for chat in chats %}
+    {% numbah+= 1 %}
+  <tr id='msg{{ numbah }}'>
+    <td>{{ chat.avatar(36) }}</td>
+    <td> <a href="{{ url_for('main.user', username=chat.username) }}">{{ chat.username }}</a></td>
+  </tr>
+  {% endfor %}
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+#Messages functionality.
+    def Get_Chats(self):
+        EvChat= Message.query.filter_by(recipient_id=self.id).group_by(Message.sender_id).all()
+        SevChat= Message.query.filter_by(sender_id=self.id).group_by(Message.recipient_id).all()
+        Chats= set()
+        for x in EvChat:
+            Chats.add(x.author)
+        for x in SevChat:
+            Chats.add(x.recipient)
+        return Chats
+    def Get_Messages(self):
+        Chats= self.Get_Chats()
+        EvMessage= {}
+        for x in Chats:
+            EvMessage[x.username]= Message.query.filter_by(recipient_id=self.id, sender_id=x.id).union(Message.query.filter_by(recipient_id=x.id, sender_id=self.id)).order_by(Message.timestamp)
+        return EvMessage
+
+After i got to use the class Active_Chat this became useless.
